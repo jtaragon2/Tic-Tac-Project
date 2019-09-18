@@ -217,7 +217,7 @@ public class TheGame
 											{
 												System.out.println("   |   |  |   |   |  |   |   |  |   |");
 											}
-										
+
 									}
 								else if (individual == 3)
 									{
@@ -234,9 +234,7 @@ public class TheGame
 
 							}
 					}
-//				
-//				
-//				
+
 //				System.out.println("   |  *   *  |	|   |  | 	     |");
 //				System.out.println("A  |    *    |  |   |  |         |");
 //				System.out.println("   |  *   *  |  |___|  |         |");
