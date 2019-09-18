@@ -217,13 +217,7 @@ public class TheGame
 											{
 												System.out.println("   |   |  |   |   |  |   |   |  |   |");
 											}
-										else if() {
-											
-										}else if() {
-											
-										}else if() {
-											
-										}
+										
 									}
 								else if (individual == 3)
 									{
