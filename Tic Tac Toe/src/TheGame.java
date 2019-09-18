@@ -13,7 +13,7 @@ public class TheGame
 		public static int board[][][];
 		public static int selectedLevel;
 		public static int individual;
-// hello
+
 		public static void main(String[] args)
 			{
 
