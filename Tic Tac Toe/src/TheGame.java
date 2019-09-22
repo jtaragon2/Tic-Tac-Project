@@ -345,7 +345,7 @@ public class TheGame
 										else if (board[level][col][shelf] == 1 && board[level][col][shelf + 1] == 2
 												&& board[level][col][shelf + 2] == 2)
 											{
-// random
+
 											}
 										else if (board[level][col][shelf] == 2 && board[level][col][shelf + 1] == 0
 												&& board[level][col][shelf + 2] == 0)
@@ -478,7 +478,7 @@ public class TheGame
 
 							}
 					}
-
+// Hello world
 //				System.out.println("   |  *   *  |	|   |  | 	     |");
 //				System.out.println("A  |    *    |  |   |  |         |");
 //				System.out.println("   |  *   *  |  |___|  |         |");
