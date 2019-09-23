@@ -11,7 +11,17 @@ public class TheGame {
 	public static int board[][][];
 	public static int selectedLevel;
 	public static int individual;
-
+	public static String name;
+	public static String nameII;
+	public static boolean win;
+	public static int turn;
+	public static int layerC;
+	public static int colC;
+	public static int shelfC;
+	public static int victory;
+	public static int nameWins;
+	public static int nameIIWins;
+	public static int wins;
 	public static void main(String[] args)
 		{
 
@@ -20,7 +30,7 @@ public class TheGame {
 			boardMaker();
 			while (quiere)
 				{
-
+				win=true;
 					move();
 					System.out.println("Would you like to play again? 1 for yes and 0 for no.");
 					Scanner quiero = new Scanner(System.in);
@@ -32,6 +42,18 @@ public class TheGame {
 						} else if (quieren == 1)
 						{
 							System.out.println("Ok");
+							if(wins!=0) {
+								if(nameWins==1) {
+									System.out.println(name+" has 1 win!");
+								}else {
+									System.out.println(name+" has "+nameWins+" wins!");
+								}
+								if(nameIIWins==1) {
+									System.out.println(nameII+" has 1 win!");
+								}else {
+									System.out.println(nameII+" has "+nameIIWins+" wins!");
+								}
+							}
 						} else
 						{
 							System.out.println("And I yeet");
@@ -44,9 +66,12 @@ public class TheGame {
 	public static void nameGet()
 		{
 			Scanner userInput = new Scanner(System.in);
-			System.out.println("What is your name?");
-			String name = userInput.nextLine();
-			System.out.println("Ok " + name + ", Shall we play a game? 1 for yes and 0 for no.");
+			System.out.println("First player, what is your name?");
+			 name = userInput.nextLine();
+			Scanner userInputII=new Scanner(System.in);
+			System.out.println("Second player, what is your name?");
+			 nameII= userInputII.nextLine();
+			System.out.println("Ok " + name + " and "+nameII+" , Shall we play a game? 1 for yes and 0 for no.");
 			Scanner userInput2 = new Scanner(System.in);
 			int status = userInput2.nextInt();
 			if (status == 0)
@@ -58,7 +83,7 @@ public class TheGame {
 					System.out.println("and I yeet you and your mistake from this house.");
 					System.exit(0);
 				}
-
+			System.out.println("Ok "+name+", you will be X's and "+nameII+" will be O's.");
 		}
 
 	public static void boardMaker()
@@ -84,7 +109,7 @@ public class TheGame {
 			for (row = 0; row < board.length; row++)
 				{
 					System.out.println("Layer " + (row+1));
-					System.out.println("        1         2       	3");
+					System.out.println("        1         2         3");
 					System.out.println("   _______________________________");
 					for (col = 0; col < board.length; col++)
 						{
@@ -109,7 +134,7 @@ public class TheGame {
 												{
 													System.out.println("   |   ___   |         |         |");
 												} else if ((board[row][col][shelf] == 0
-														|| board[row][col][shelf + 1] == 1)
+														|| board[row][col][shelf ] == 1)
 														&& board[row][col][shelf + 1] == 2
 														&& (board[row][col][shelf + 2] == 0
 																|| board[row][col][shelf + 2] == 1))
@@ -164,10 +189,9 @@ public class TheGame {
 												{
 													System.out.println("   |         |  *   *  |         |");
 												} else if (board[row][col][shelf] == 0
-														&& board[row][col][shelf + 1] == 2
-														|| board[row][col][shelf] == 1
-																&& board[row][col][shelf + 2] == 0
-														|| board[row][col][shelf + 1] == 1)
+														&& board[row][col][shelf + 2] == 2
+														&& board[row][col][shelf + 1] == 0
+														)
 												{
 													System.out.println("   |         |         |  *   *  |");
 												} else if (board[row][col][shelf] == 2
@@ -195,9 +219,7 @@ public class TheGame {
 														&& board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |  |   |  |  *   *  |         |");
-												}
-
-											else if (board[row][col][shelf] == 1 && board[row][col][shelf + 1] == 2
+												}else if (board[row][col][shelf] == 1 && board[row][col][shelf + 1] == 2
 													&& board[row][col][shelf + 2] == 1)
 												{
 													System.out.println("   |  *   *  |  |   |  |  *   *  |");
@@ -216,7 +238,13 @@ public class TheGame {
 														&& board[row][col][shelf + 2] == 2)
 												{
 													System.out.println("   |  *   *  |  |   |  |  |   |  |");
+												}else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 01
+														&& board[row][col][shelf + 2] == 1)
+												{
+													System.out.println((1+col)+"  |  |   |  |  *   *  |        |");
 												}
+
 
 											else if (board[row][col][shelf] == 1 && board[row][col][shelf + 1] == 1
 													|| board[row][col][shelf + 2] == 0)
@@ -239,9 +267,7 @@ public class TheGame {
 														&& board[row][col][shelf + 2] == 1)
 												{
 													System.out.println("   |  *   *  |  *   *  |  *   *  |");
-												}
-
-											else if (board[row][col][shelf] == 1 && board[row][col][shelf + 1] == 1
+												}else if (board[row][col][shelf] == 1 && board[row][col][shelf + 1] == 1
 													|| board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |  *   *  |  *   *  |         |");
@@ -273,91 +299,97 @@ public class TheGame {
 														&& board[row][col][shelf + 1] == 0
 														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |    *    |         |         |");
 												} else if (board[row][col][shelf] == 1
 														&& board[row][col][shelf + 1] == 1
 														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |    *    |    *    |         |");
 
 												} else if (board[row][col][shelf] == 1
 														&& board[row][col][shelf + 1] == 1
 														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |    *    |    *    |    *    |");
 
 												} else if (board[row][col][shelf] == 0
 														&& board[row][col][shelf + 1] == 1
 														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |         |    *    |         |");
 
 												} else if (board[row][col][shelf] == 0
 														&& board[row][col][shelf + 1] == 0
 														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |         |         |    *    |");
 												} else if (board[row][col][shelf] == 1
 														&& board[row][col][shelf + 1] == 0
-														&& board[row][col][shelf + 2] == 01)
+														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |    *    |         |    *    |");
 												} else if (board[row][col][shelf] == 0
 														&& board[row][col][shelf + 1] == 1
 														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |         |    *    |    *    |");
 												} else if (board[row][col][shelf] == 1
 														&& board[row][col][shelf + 1] == 2
 														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |    *    |  |   |  |         |");
 												} else if (board[row][col][shelf] == 1
 														&& board[row][col][shelf + 1] == 2
 														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |    *    |  |   |  |    *    |");
 												} else if (board[row][col][shelf] == 1
 														&& board[row][col][shelf + 1] == 2
 														&& board[row][col][shelf + 2] == 2)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |    *    |  |   |  |  |   |  |");
 												} else if (board[row][col][shelf] == 2
 														&& board[row][col][shelf + 1] == 0
 														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |  |   |  |         |         |");
 												} else if (board[row][col][shelf] == 2
 														&& board[row][col][shelf + 1] == 1
 														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |  |   |  |    *    |         |");
 												} else if (board[row][col][shelf] == 2
 														&& board[row][col][shelf + 1] == 1
 														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |  |   |  |    *    |    *    |");
 												} else if (board[row][col][shelf] == 2
 														&& board[row][col][shelf + 1] == 1
 														&& board[row][col][shelf + 2] == 2)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |  |   |  |    *    |  |   |  |");
 												} else if (board[row][col][shelf] == 2
 														&& board[row][col][shelf + 1] == 2
 														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |  |   |  |  |   |  |         |");
 												} else if (board[row][col][shelf] == 2
 														&& board[row][col][shelf + 1] == 2
 														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |  |   |  |  |   |  |    *    |");
 												} else if (board[row][col][shelf] == 2
 														&& board[row][col][shelf + 1] == 02
 														&& board[row][col][shelf + 2] == 2)
 												{
-													System.out.println((1+col)+"   |         |         |         |");
+													System.out.println((1+col)+"  |  |   |  |  |   |  |  |   |  |");
+												}else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 2)
+												{
+													System.out.println((1+col)+"  |    *    |    *    |  |   |  |");
 												}
+
 										} else if (individual == 4)
 										{
 											if (board[row][col][shelf] == 0 && board[row][col][shelf + 1] == 0
@@ -444,7 +476,13 @@ public class TheGame {
 														&& board[row][col][shelf + 2] == 02)
 												{
 													System.out.println("   |         |  |___|  |  |___|  |");
+												}else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 02
+														&& board[row][col][shelf + 2] == 0)
+												{
+													System.out.println("   |  *   *  |  |___|  |         |");
 												}
+
 										} else if (individual == 5)
 										{
 											System.out.println("   |_________|_________|_________|");
@@ -473,24 +511,65 @@ public class TheGame {
 
 	public static void move()
 		{
-			System.out.println("Would you like to be X's or  O's?");
-			Scanner xOrO = new Scanner(System.in);
-			String xAndO = xOrO.nextLine();
-			if (xAndO.equalsIgnoreCase("x"))
-				{
-					boolean xTrue = true;
-				} else if (xAndO.equalsIgnoreCase("o"))
-				{
-					boolean xTrue;
-				} else
-				{
-					System.out.println("and I yeet you and your mistake from this house.");
-					System.exit(0);
-				}
-			System.out.println("Ok, where do you want to go? Layer 1, 2 or 3? (Just the number)");
-			Scanner layer = new Scanner(System.in);
-			int layerC = layer.nextInt();
+		while(win) {
+//			System.out.println("Would you like to be X's or  O's?");
+//			Scanner xOrO = new Scanner(System.in);
+//			String xAndO = xOrO.nextLine();
+//			if (xAndO.equalsIgnoreCase("x"))
+//				{
+//					boolean xTrue = true;
+//				} else if (xAndO.equalsIgnoreCase("o"))
+//				{
+//					boolean xTrue;
+//				} else
+//				{
+//					System.out.println("and I yeet you and your mistake from this house.");
+//					System.exit(0);
+//				}
+			if(turn%2==0) {
 			board();
-
+			System.out.println("Ok "+name+", where do you want to go? Layer 1, 2 or 3? (Just the number)");
+			Scanner layer = new Scanner(System.in);
+			 layerC = layer.nextInt();
+			 System.out.println("Ok "+name+", where do you want to go? Column 1, 2 or 3? (Just the number)");
+			 Scanner column = new Scanner(System.in);
+			 colC=column.nextInt();
+			 System.out.println("Ok "+name+", where do you want to go? Row 1, 2 or 3? (Just the number)");
+			 Scanner level= new Scanner(System.in);
+			shelfC=level.nextInt();
+			board[layerC-1][colC-1][shelfC-1]=1;
+turn++;
+			}else if(turn%2==1) {
+				board();
+				System.out.println("Ok "+nameII+", where do you want to go? Layer 1, 2 or 3? (Just the number)");
+				Scanner layer = new Scanner(System.in);	
+			 layerC = layer.nextInt();
+			 System.out.println("Ok "+nameII+", where do you want to go? Column 1, 2 or 3? (Just the number)");
+			 Scanner column=new Scanner(System.in);
+			 colC=column.nextInt();
+			 System.out.println("Ok "+nameII+", where do you want to go? Row 1, 2 or 3? (Just the number)");
+			 Scanner level= new Scanner(System.in);
+			shelfC=level.nextInt();
+			board[layerC-1][colC-1][shelfC-1]=2;
+			turn++;
+			}
+			if(turn>=5) {
+				System.out.println("Has anyone won yet? 1 for yes and 0 for no.");
+				Scanner vic = new Scanner(System.in);
+				victory=vic.nextInt();
+				if (victory==1) {
+					win=false;
+					wins++;
+					System.out.println("Who won?");
+					Scanner winnee=new Scanner(System.in);
+					String winner=winnee.nextLine();
+					if (winner=name) {
+						
+					}else if(winner=nameII) {
+						
+					}
+				}
+			}
+		}
 		}
 }
