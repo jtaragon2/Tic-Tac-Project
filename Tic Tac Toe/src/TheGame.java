@@ -563,9 +563,9 @@ turn++;
 					System.out.println("Who won?");
 					Scanner winnee=new Scanner(System.in);
 					String winner=winnee.nextLine();
-					if (winner=name) {
+					if (winner==name) {
 						
-					}else if(winner=nameII) {
+					}else if(winner==nameII) {
 						
 					}
 				}
