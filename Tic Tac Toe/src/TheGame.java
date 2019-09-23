@@ -80,11 +80,12 @@ public class TheGame {
 	public static void board()
 		{
 
-			System.out.println("        1         2       	3");
-			System.out.println("   _______________________________");
+			
 			for (row = 0; row < board.length; row++)
 				{
-					System.out.println("Layer " + row);
+					System.out.println("Layer " + (row+1));
+					System.out.println("        1         2       	3");
+					System.out.println("   _______________________________");
 					for (col = 0; col < board.length; col++)
 						{
 							shelf = 0;
@@ -93,356 +94,356 @@ public class TheGame {
 
 									if (individual == 1)
 										{
-											if ((board[level][col][shelf] == 0 || board[level][col][shelf] == 1)
-													&& (board[level][col][shelf + 1] == 0
-															|| board[level][col][shelf + 1] == 1)
-													&& (board[level][col][shelf + 2] == 0
-															|| board[level][col][shelf + 2] == 1))
+											if ((board[row][col][shelf] == 0 || board[row][col][shelf] == 1)
+													&& (board[row][col][shelf + 1] == 0
+															|| board[row][col][shelf + 1] == 1)
+													&& (board[row][col][shelf + 2] == 0
+															|| board[row][col][shelf + 2] == 1))
 												{
 													System.out.println("   |         |         |         |");
-												} else if (board[level][col][shelf] == 2
-														&& (board[level][col][shelf + 1] == 0
-																|| board[level][col][shelf + 1] == 1)
-														&& (board[level][col][shelf + 2] == 0
-																|| board[level][col][shelf + 2] == 1))
+												} else if (board[row][col][shelf] == 2
+														&& (board[row][col][shelf + 1] == 0
+																|| board[row][col][shelf + 1] == 1)
+														&& (board[row][col][shelf + 2] == 0
+																|| board[row][col][shelf + 2] == 1))
 												{
 													System.out.println("   |   ___   |         |         |");
-												} else if ((board[level][col][shelf] == 0
-														|| board[level][col][shelf + 1] == 1)
-														&& board[level][col][shelf + 1] == 2
-														&& (board[level][col][shelf + 2] == 0
-																|| board[level][col][shelf + 2] == 1))
+												} else if ((board[row][col][shelf] == 0
+														|| board[row][col][shelf + 1] == 1)
+														&& board[row][col][shelf + 1] == 2
+														&& (board[row][col][shelf + 2] == 0
+																|| board[row][col][shelf + 2] == 1))
 												{
 													System.out.println("   |         |   ___   |         |");
-												} else if ((board[level][col][shelf] == 0
-														|| board[level][col][shelf] == 1)
-														&& board[level][col][shelf + 2] == 2
-														&& (board[level][col][shelf + 1] == 0
-																|| board[level][col][shelf + 1] == 1))
+												} else if ((board[row][col][shelf] == 0
+														|| board[row][col][shelf] == 1)
+														&& board[row][col][shelf + 2] == 2
+														&& (board[row][col][shelf + 1] == 0
+																|| board[row][col][shelf + 1] == 1))
 												{
 													System.out.println("   |         |         |   ___   |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 2
-														&& (board[level][col][shelf + 2] == 0
-																|| board[level][col][shelf + 2] == 1))
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 2
+														&& (board[row][col][shelf + 2] == 0
+																|| board[row][col][shelf + 2] == 1))
 												{
 													System.out.println("   |   ___   |   ___   |         |");
-												} else if ((board[level][col][shelf] == 0
-														|| board[level][col][shelf] == 1)
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf] == 2)
+												} else if ((board[row][col][shelf] == 0
+														|| board[row][col][shelf] == 1)
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf] == 2)
 												{
 													System.out.println("   |         |   ___   |   ___   |");
 
-												} else if (board[level][col][shelf] == 2
-														&& (board[level][col][shelf + 1] == 0
-																|| board[level][col][shelf + 1] == 1)
-														&& board[level][col][shelf + 2] == 2)
+												} else if (board[row][col][shelf] == 2
+														&& (board[row][col][shelf + 1] == 0
+																|| board[row][col][shelf + 1] == 1)
+														&& board[row][col][shelf + 2] == 2)
 												{
 													System.out.println("   |   ___   |         |   ___   |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 2)
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 2)
 												{
 													System.out.println("   |   ___   |   ___   |   ___    |");
 												}
 										} else if (individual == 2)
 										{
-											if (board[level][col][shelf] == 0 && board[level][col][shelf + 1] == 0
-													&& board[level][col][shelf + 2] == 0)
+											if (board[row][col][shelf] == 0 && board[row][col][shelf + 1] == 0
+													&& board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |         |         |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 0)
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |  *   *  |         |         |");
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 0)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |         |  *   *  |         |");
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 2
-														|| board[level][col][shelf] == 1
-																&& board[level][col][shelf + 2] == 0
-														|| board[level][col][shelf + 1] == 1)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 2
+														|| board[row][col][shelf] == 1
+																&& board[row][col][shelf + 2] == 0
+														|| board[row][col][shelf + 1] == 1)
 												{
 													System.out.println("   |         |         |  *   *  |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 0)
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |  |   |  |         |         |");
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 0)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |         |  |   |  |         |");
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 2)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 2)
 												{
 													System.out.println("   |         |         |  |   |  |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 0)
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |  *   *  |  |   |  |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 0)
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |  |   |  |  *   *  |         |");
 												}
 
-											else if (board[level][col][shelf] == 1 && board[level][col][shelf + 1] == 2
-													&& board[level][col][shelf + 2] == 1)
+											else if (board[row][col][shelf] == 1 && board[row][col][shelf + 1] == 2
+													&& board[row][col][shelf + 2] == 1)
 												{
 													System.out.println("   |  *   *  |  |   |  |  *   *  |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 2)
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 2)
 												{
 													System.out.println("   |  *   *  |         |  |   |  |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 2)
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 2)
 												{
 													System.out.println("   |  *   *  |  *   *  |  |   |  |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 2)
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 2)
 												{
 													System.out.println("   |  *   *  |  |   |  |  |   |  |");
 												}
 
-											else if (board[level][col][shelf] == 1 && board[level][col][shelf + 1] == 1
-													|| board[level][col][shelf + 2] == 0)
+											else if (board[row][col][shelf] == 1 && board[row][col][shelf + 1] == 1
+													|| board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |  *   *  |  *   *  |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 1)
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 1)
 												{
 													System.out.println("   |  *   *  |         |  *   *  |");
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 1)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 1)
 												{
 													System.out.println("   |         |  *   *  |  *   *  |");
 
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 1
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 1
 
-														&& board[level][col][shelf + 2] == 1)
+														&& board[row][col][shelf + 2] == 1)
 												{
 													System.out.println("   |  *   *  |  *   *  |  *   *  |");
 												}
 
-											else if (board[level][col][shelf] == 1 && board[level][col][shelf + 1] == 1
-													|| board[level][col][shelf + 2] == 0)
+											else if (board[row][col][shelf] == 1 && board[row][col][shelf + 1] == 1
+													|| board[row][col][shelf + 2] == 0)
 												{
 													System.out.println("   |  *   *  |  *   *  |         |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 1)
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 1)
 												{
 													System.out.println("   |  |   |  |         |  *   *  |");
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 1)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 1)
 												{
 													System.out.println("   |         |  *   *  |  *   *  |");
 
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 2)
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 2)
 												{
 													System.out.println("   |   |  |   |   |  |   |   |  |   |");
 												}
 
 										} else if (individual == 3)
 										{
-											if (board[level][col][shelf] == 0 && board[level][col][shelf + 1] == 0
-													&& board[level][col][shelf + 2] == 0)
+											if (board[row][col][shelf] == 0 && board[row][col][shelf + 1] == 0
+													&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println(col+"  |         |         |         |  ");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 0)
+													System.out.println((1+col)+"  |         |         |         |  ");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 0)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println(col+"   |         |         |         |");
+													System.out.println((1+col)+"   |         |         |         |");
 
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 1)
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println(col+"   |         |         |         |");
+													System.out.println((1+col)+"   |         |         |         |");
 
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 0)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println(col+"   |         |         |         |");
+													System.out.println((1+col)+"   |         |         |         |");
 
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 1)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 01)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 01)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 1)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 0)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 1)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 2)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 2)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 0)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 0)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 1)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 2)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 2)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 0)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 1)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 1)
 												{
-													System.out.println(col+"   |         |         |         |");
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 02
-														&& board[level][col][shelf + 2] == 2)
+													System.out.println((1+col)+"   |         |         |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 02
+														&& board[row][col][shelf + 2] == 2)
 												{
-													System.out.println(col+"   |         |         |         |");
+													System.out.println((1+col)+"   |         |         |         |");
 												}
 										} else if (individual == 4)
 										{
-											if (board[level][col][shelf] == 0 && board[level][col][shelf + 1] == 0
-													&& board[level][col][shelf + 2] == 0)
+											if (board[row][col][shelf] == 0 && board[row][col][shelf + 1] == 0
+													&& board[row][col][shelf + 2] == 0)
 												{
-													System.out.println("    |         |         |         |");
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 0)
+													System.out.println("   |         |         |         |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 0)
 												{
+													System.out.println("   |  *   *  |         |         |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 0)
+												{
+													System.out.println("   |  *   *  |  *   *  |         |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 1)
+												{
+													System.out.println("   |  *   *  |  *   *  |  *   *  |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 2)
+												{
+													System.out.println("   |  *   *  |  *   *  |  |___|  |");
+												} else if (board[row][col][shelf] == 1
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 2)
+												{
+													System.out.println("   |  *   *  |  |___|  |  |___|  |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 0)
+												{
+													System.out.println("   |  |___|  |         |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 0)
+												{
+													System.out.println("   |  |___|  |  *   *  |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 0
+														&& board[row][col][shelf + 2] == 1)
+												{
+													System.out.println("   |  |___|  |         |  *   *  |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 1)
+												{
+													System.out.println("   |  |___|  |  *   *  |  *   *  |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 02
+														&& board[row][col][shelf + 2] == 0)
+												{
+													System.out.println("   |  |___|  |  |___|  |         |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 1)
+												{
+													System.out.println("   |  |___|  |  |___|  |  *   *  |");
+												} else if (board[row][col][shelf] == 2
+														&& board[row][col][shelf + 1] == 02
+														&& board[row][col][shelf + 2] == 2)
+												{
+													System.out.println("   |  |___|  |  |___|  |  |___|  |");
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 0)
+												{
+													System.out.println("   |         |  *   *  |         |");
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 01)
+												{
+													System.out.println("   |         |  *   *  |  *   *  |");
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 1
+														&& board[row][col][shelf + 2] == 2)
+												{System.out.println("   |         |  *   *  |  |___|  |");
 
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 0)
+												} else if (board[row][col][shelf] == 0
+														&& board[row][col][shelf + 1] == 2
+														&& board[row][col][shelf + 2] == 02)
 												{
-
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 1)
-												{
-
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 2)
-												{
-
-												} else if (board[level][col][shelf] == 1
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 2)
-												{
-
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 0
-														&& board[level][col][shelf + 2] == 0)
-												{
-
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 0)
-												{
-
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 01
-														&& board[level][col][shelf + 2] == 1)
-												{
-
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 1)
-												{
-
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 02
-														&& board[level][col][shelf + 2] == 0)
-												{
-
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 1)
-												{
-
-												} else if (board[level][col][shelf] == 2
-														&& board[level][col][shelf + 1] == 02
-														&& board[level][col][shelf + 2] == 2)
-												{
-
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 0)
-												{
-
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 01)
-												{
-
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 1
-														&& board[level][col][shelf + 2] == 2)
-												{
-
-												} else if (board[level][col][shelf] == 0
-														&& board[level][col][shelf + 1] == 2
-														&& board[level][col][shelf + 2] == 02)
-												{
-
+													System.out.println("   |         |  |___|  |  |___|  |");
 												}
 										} else if (individual == 5)
 										{
@@ -452,7 +453,7 @@ public class TheGame {
 								}
 						}
 				}
-// Hello world
+
 //				System.out.println("   |  *   *  |	|   |  | 	     |");
 //				System.out.println("A  |    *    |  |   |  |         |");
 //				System.out.println("   |  *   *  |  |___|  |         |");
@@ -488,8 +489,8 @@ public class TheGame {
 				}
 			System.out.println("Ok, where do you want to go? Layer 1, 2 or 3? (Just the number)");
 			Scanner layer = new Scanner(System.in);
-			int firstLC = layer.nextInt();
-			board(firstLC);
+			int layerC = layer.nextInt();
+			board();
 
 		}
 }
