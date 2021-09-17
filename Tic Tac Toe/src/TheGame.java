@@ -35,7 +35,7 @@ public class TheGame
 						win = true;
 						move();
 						System.out.println("Would you like to play again? 1 for yes and 0 for no.");
-
+						boardMaker();
 						int quieren = getter.nextInt();
 						if (quieren == 0)
 							{
@@ -219,14 +219,14 @@ public class TheGame
 										System.out.println("   |         |  |   |  |  |   |  |");
 										System.out.println((1 + col) + "  |         |  |   |  |  |   |  |");
 										System.out.println("   |         |  |___|  |  |___|  |");
-									
+
 									} else if (board[row][col][0] == 1 && board[row][col][1] == 1
 											&& board[row][col][2] == 2)
 									{
-									System.out.println("   |         |         |   ___   |");
-									System.out.println("   |  *   *  |  *   *  |  |   |  |");
-									System.out.println((1 + col) + "  |    *    |    *    |  |   |  |");
-									System.out.println("   |  *   *  |  *   *  |  |___|  |");
+										System.out.println("   |         |         |   ___   |");
+										System.out.println("   |  *   *  |  *   *  |  |   |  |");
+										System.out.println((1 + col) + "  |    *    |    *    |  |   |  |");
+										System.out.println("   |  *   *  |  *   *  |  |___|  |");
 									} else if (board[row][col][0] == 1 && board[row][col][1] == 2
 											&& board[row][col][2] == 2)
 									{
@@ -237,17 +237,20 @@ public class TheGame
 									} else if (board[row][col][0] == 1 && board[row][col][1] == 2
 											&& board[row][col][2] == 1)
 									{
-										System.out.println("   |         |         |         |");
-										System.out.println("   |  *   *  |         |  *   *  |  ");
-										System.out.println((1 + col) + "  |    *    |         |    *    |  ");
-										System.out.println("   |  *   *  |         |  *   *  |  ");
+										System.out.println("   |         |   ___   |         |");
+										System.out.println("   |  *   *  |  |   |  |  *   *  |  ");
+										System.out.println((1 + col) + "  |    *    |  |   |  |    *    |  ");
+										System.out.println("   |  *   *  |  |___|  |  *   *  |  ");
 									} else if (board[row][col][0] == 2 && board[row][col][1] == 2
 											&& board[row][col][2] == 1)
 									{
+										System.out.println("   |   ___   |   ___   |         |");
+										System.out.println("   |  |   |  |  |   |  |  *    * |");
+										System.out.println((1 + col) + "  |  |   |  |  |   |  |    *    |");
+										System.out.println("   |  |___|  |  |___|  |  *    * |");
 									} else if (board[row][col][0] == 2 && board[row][col][1] == 0
 											&& board[row][col][2] == 2)
 									{
-										
 										System.out.println("   |   ___   |         |   ___   |");
 										System.out.println("   |  |   |  |         |  |   |  |");
 										System.out.println((1 + col) + "  |  |   |  |         |  |   |  |");
@@ -255,30 +258,64 @@ public class TheGame
 									} else if (board[row][col][0] == 2 && board[row][col][1] == 1
 											&& board[row][col][2] == 1)
 									{
+										System.out.println("   |   ___   |         |         |");
+										System.out.println("   |  |   |  |  *   *  |  *   *  |  ");
+										System.out.println((1 + col) + "  |  |   |  |    *    |    *    |  ");
+										System.out.println("   |  |___|  |  *   *  |  *   *  |  ");
 									} else if (board[row][col][0] == 2 && board[row][col][1] == 1
 											&& board[row][col][2] == 2)
 									{
+										System.out.println("   |   ___   |         |   ___   |");
+										System.out.println("   |  |   |  |  *   *  |  |   |  |");
+										System.out.println((1 + col) + "  |  |   |  |    *    |  |   |  |");
+										System.out.println("   |  |___|  |  *   *  |  |___|  |");
 									} else if (board[row][col][0] == 0 && board[row][col][1] == 1
 											&& board[row][col][2] == 2)
 									{
+										System.out.println("   |         |         |   ___   |");
+										System.out.println("   |         |  *   *  |  |   |  |  ");
+										System.out.println((1 + col) + "  |         |    *    |   |   |  |  ");
+										System.out.println("   |         |  *   *  |  |___|  |  ");
 									} else if (board[row][col][0] == 0 && board[row][col][1] == 2
 											&& board[row][col][2] == 1)
 									{
+										System.out.println("   |         |   ___   |         |");
+										System.out.println("   |         |  |   |  |  *   *  |  ");
+										System.out.println((1 + col) + "  |         |  |   |  |    *    |  ");
+										System.out.println("   |         |  |___|  |  *   *  |  ");
 									} else if (board[row][col][0] == 1 && board[row][col][1] == 0
 											&& board[row][col][2] == 2)
 									{
+										System.out.println("   |         |         |   ___   |");
+										System.out.println("   |  *   *  |         |  |   |  |  ");
+										System.out.println((1 + col) + "  |    *    |         |  |   |  |  ");
+										System.out.println("   |  *   *  |         |  |___|  |  ");
 									} else if (board[row][col][0] == 2 && board[row][col][1] == 0
 											&& board[row][col][2] == 1)
 									{
+										System.out.println("   |   ___   |         |         |");
+										System.out.println("   |  |   |  |         |  *   *  |");
+										System.out.println((1 + col) + "  |  |   |  |         |    *    |");
+										System.out.println("   |  |___|  |         |  *   *  |");
 									} else if (board[row][col][0] == 1 && board[row][col][1] == 2
 											&& board[row][col][2] == 0)
 									{
+										System.out.println("   |         |   ___   |         |");
+										System.out.println("   |  *   *  |  |   |  |         |  ");
+										System.out.println((1 + col) + "  |    *    |  |   |  |         |  ");
+										System.out.println("   |  *   *  |  |___|  |         |  ");
+									} else if (board[row][col][0] == 2 && board[row][col][1] == 1
+											&& board[row][col][2] == 0)
+									{
+										System.out.println("   |   ___   |         |         |");
+										System.out.println("   |  |   |  |  *   *  |         |");
+										System.out.println((1 + col) + "  |  |   |  |    *    |         |");
+										System.out.println("   |  |___|  |  *   *  |         |");
 									}
-
 								System.out.println("   |_________|_________|_________|");
-								System.out.println();
 
 							}
+						System.out.println();
 					}
 			}
 
