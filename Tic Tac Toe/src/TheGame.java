@@ -6,7 +6,7 @@ public class TheGame
 		public static int row;
 		public static int col;
 		public static int a;
-		public static boolean quiere = true;
+
 		public static int move;
 		public static int board[][][];
 		public static int selectedLevel;
@@ -15,6 +15,7 @@ public class TheGame
 		public static String nameII;
 		public static boolean win;
 		public static int turn;
+		private static boolean quiere;
 		public static int layerC;
 		public static int colC;
 		public static int shelfC;
@@ -30,7 +31,8 @@ public class TheGame
 
 				nameGet();
 				boardMaker();
-				while (quiere)
+
+				do
 					{
 						win = true;
 						move();
@@ -39,10 +41,12 @@ public class TheGame
 						int quieren = getter.nextInt();
 						if (quieren == 0)
 							{
+								quiere = false;
 								System.out.println("And I yeet");
 								System.exit(0);
 							} else if (quieren == 1)
 							{
+								quiere = true;
 								System.out.println("Ok");
 								if (wins != 0)
 									{
@@ -66,7 +70,7 @@ public class TheGame
 								System.out.println("And I yeet");
 								System.exit(0);
 							}
-					}
+					} while (quiere);
 				;
 			}
 
@@ -333,9 +337,18 @@ public class TheGame
 //				System.out.println("C  |         |         |         |");
 //				System.out.println("   |         |         |         |");
 //				
+		public static boolean hasWon()
+			{
+				if (board[1][1][1] + board[2][2][2] + board[0][0][0] == 3)
+					{
+						return true;
+					}
+				return false;
+			}
 
 		public static void move()
 			{
+				board();
 				while (win)
 					{
 //			System.out.println("Would you like to be X's or  O's?");
@@ -354,7 +367,7 @@ public class TheGame
 //				}
 						if (turn % 2 == 0)
 							{
-								board();
+								
 								System.out.println("Ok " + name
 										+ ", where do you want to go? Layer 1, 2, or 3? (Just the number)");
 
@@ -371,7 +384,7 @@ public class TheGame
 								turn++;
 							} else if (turn % 2 == 1)
 							{
-								board();
+								
 								System.out.println("Ok " + nameII
 										+ ", where do you want to go? Layer 1, 2, or 3? (Just the number)");
 
@@ -387,6 +400,7 @@ public class TheGame
 								board[layerC - 1][colC - 1][shelfC - 1] = 2;
 								turn++;
 							}
+						board();
 						if (turn >= 5)
 							{
 								System.out.println("Has anyone won yet? 1 for yes and 0 for no.");
@@ -398,12 +412,12 @@ public class TheGame
 										wins++;
 										System.out.println("Who won?");
 										String winner = stringGetter.nextLine();
-										if (winner.equals(name.toLowerCase()))
+										if (winner.toLowerCase().equals(name.toLowerCase()))
 											{
-
-											} else if (winner.equals(nameII))
+												nameWins++;
+											} else if (winner.toLowerCase().equals(nameII.toLowerCase()))
 											{
-
+												nameIIWins++;
 											}
 									}
 							}
