@@ -83,7 +83,7 @@ public class TheGame
 				System.out.println("Second player, what is your name?");
 				nameII = stringGetter.nextLine();
 				System.out
-						.println("Ok " + name + " and " + nameII + " , Shall we play a game? 1 for yes and 0 for no.");
+						.println("Ok " + name + " and " + nameII + ", Shall we play a game? 1 for yes and 0 for no.");
 
 				int status = getter.nextInt();
 				if (status == 0)
