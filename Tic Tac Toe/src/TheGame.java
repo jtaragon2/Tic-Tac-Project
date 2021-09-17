@@ -219,18 +219,28 @@ public class TheGame
 										System.out.println("   |         |  |   |  |  |   |  |");
 										System.out.println((1 + col) + "  |         |  |   |  |  |   |  |");
 										System.out.println("   |         |  |___|  |  |___|  |");
-									} else if (board[row][col][0] == 0 && board[row][col][1] == 2
-											&& board[row][col][2] == 0)
-									{
+									
 									} else if (board[row][col][0] == 1 && board[row][col][1] == 1
 											&& board[row][col][2] == 2)
 									{
+									System.out.println("   |         |         |   ___   |");
+									System.out.println("   |  *   *  |  *   *  |  |   |  |");
+									System.out.println((1 + col) + "  |    *    |    *    |  |   |  |");
+									System.out.println("   |  *   *  |  *   *  |  |___|  |");
 									} else if (board[row][col][0] == 1 && board[row][col][1] == 2
 											&& board[row][col][2] == 2)
 									{
+										System.out.println("   |         |   ___   |   ___   |");
+										System.out.println("   |  *   *  |  |   |  |  |   |  |");
+										System.out.println((1 + col) + "  |    *    |  |   |  |  |   |  |");
+										System.out.println("   |  *   *  |  |___|  |  |___|  |");
 									} else if (board[row][col][0] == 1 && board[row][col][1] == 2
 											&& board[row][col][2] == 1)
 									{
+										System.out.println("   |         |         |         |");
+										System.out.println("   |  *   *  |         |  *   *  |  ");
+										System.out.println((1 + col) + "  |    *    |         |    *    |  ");
+										System.out.println("   |  *   *  |         |  *   *  |  ");
 									} else if (board[row][col][0] == 2 && board[row][col][1] == 2
 											&& board[row][col][2] == 1)
 									{
