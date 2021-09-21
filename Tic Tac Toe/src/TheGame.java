@@ -37,8 +37,9 @@ public class TheGame
 				
 			}
 			
-		public static void playGame() {
-			do
+		public static void playGame()
+			{
+				do
 					{
 						win = true;
 						move();
@@ -82,7 +83,8 @@ public class TheGame
 							}
 					} while (quiere);
 				;
-		}
+			}
+			
 		public static void nameGet()
 			{
 				
@@ -365,61 +367,119 @@ public class TheGame
 					}
 				while (win)
 					{
-						
-						if (turn % 2 == 0)
+						if (nameNum == 1)
 							{
-								
-								System.out.println("Ok " + name
-										+ ", where do you want to go? Layer 1, 2, or 3? (Just the number)");
-								
-								layerC = getter.nextInt();
-								System.out.println(
-										"Ok " + name + ", where do you want to go? Row 1, 2, or 3? (Just the number)");
-								
-								colC = getter.nextInt();
-								System.out.println("Ok " + name
-										+ ", where do you want to go? Column 1, 2, or 3? (Just the number)");
-								
-								shelfC = getter.nextInt();
-								if (board[layerC - 1][colC - 1][shelfC - 1] == 0)
+								if (turn % 2 == 0)
 									{
-										board[layerC - 1][colC - 1][shelfC - 1] = nameNum;
+										
+										System.out.println("Ok " + name
+												+ ", where do you want to go? Layer 1, 2, or 3? (Just the number)");
+										
+										layerC = getter.nextInt();
+										System.out.println("Ok " + name
+												+ ", where do you want to go? Row 1, 2, or 3? (Just the number)");
+										
+										colC = getter.nextInt();
+										System.out.println("Ok " + name
+												+ ", where do you want to go? Column 1, 2, or 3? (Just the number)");
+										
+										shelfC = getter.nextInt();
+										if (board[layerC - 1][colC - 1][shelfC - 1] == 0)
+											{
+												board[layerC - 1][colC - 1][shelfC - 1] = nameNum;
+											}
+										else
+											{
+												System.out.println("You can't do that");
+												turn--;
+												System.out.println("Try again");
+											}
 									}
-								else
+								else if (turn % 2 == 1)
 									{
-										System.out.println("You can't do that");
-										turn--;
-										System.out.println("Try again");
+										
+										System.out.println("Ok " + nameII
+												+ ", where do you want to go? Layer 1, 2, or 3? (Just the number)");
+										
+										layerC = getter.nextInt();
+										System.out.println("Ok " + nameII
+												+ ", where do you want to go? Row 1, 2, or 3? (Just the number)");
+										
+										colC = getter.nextInt();
+										System.out.println("Ok " + nameII
+												+ ", where do you want to go? Column 1, 2, or 3? (Just the number)");
+										
+										shelfC = getter.nextInt();
+										if (board[layerC - 1][colC - 1][shelfC - 1] == 0)
+											{
+												board[layerC - 1][colC - 1][shelfC - 1] = nameIINum;
+											}
+										else
+											{
+												System.out.println();
+												System.out.println("You can't do that");
+												turn--;
+												System.out.println("Try again");
+												System.out.println();
+											}
+											
 									}
-							}
-						else if (turn % 2 == 1)
-							{
-								
-								System.out.println("Ok " + nameII
-										+ ", where do you want to go? Layer 1, 2, or 3? (Just the number)");
-								
-								layerC = getter.nextInt();
-								System.out.println("Ok " + nameII
-										+ ", where do you want to go? Row 1, 2, or 3? (Just the number)");
-								
-								colC = getter.nextInt();
-								System.out.println("Ok " + nameII
-										+ ", where do you want to go? Column 1, 2, or 3? (Just the number)");
-								
-								shelfC = getter.nextInt();
-								if (board[layerC - 1][colC - 1][shelfC - 1] == 0)
+							}else {
+								if (turn % 2 == 1)
 									{
-										board[layerC - 1][colC - 1][shelfC - 1] = nameIINum;
+										
+										System.out.println("Ok " + name
+												+ ", where do you want to go? Layer 1, 2, or 3? (Just the number)");
+										
+										layerC = getter.nextInt();
+										System.out.println("Ok " + name
+												+ ", where do you want to go? Row 1, 2, or 3? (Just the number)");
+										
+										colC = getter.nextInt();
+										System.out.println("Ok " + name
+												+ ", where do you want to go? Column 1, 2, or 3? (Just the number)");
+										
+										shelfC = getter.nextInt();
+										if (board[layerC - 1][colC - 1][shelfC - 1] == 0)
+											{
+												board[layerC - 1][colC - 1][shelfC - 1] = nameNum;
+											}
+										else
+											{
+												System.out.println("You can't do that");
+												turn--;
+												System.out.println("Try again");
+											}
 									}
-								else
+								else if (turn % 2 == 0)
 									{
-										System.out.println();
-										System.out.println("You can't do that");
-										turn--;
-										System.out.println("Try again");
-										System.out.println();
+										
+										System.out.println("Ok " + nameII
+												+ ", where do you want to go? Layer 1, 2, or 3? (Just the number)");
+										
+										layerC = getter.nextInt();
+										System.out.println("Ok " + nameII
+												+ ", where do you want to go? Row 1, 2, or 3? (Just the number)");
+										
+										colC = getter.nextInt();
+										System.out.println("Ok " + nameII
+												+ ", where do you want to go? Column 1, 2, or 3? (Just the number)");
+										
+										shelfC = getter.nextInt();
+										if (board[layerC - 1][colC - 1][shelfC - 1] == 0)
+											{
+												board[layerC - 1][colC - 1][shelfC - 1] = nameIINum;
+											}
+										else
+											{
+												System.out.println();
+												System.out.println("You can't do that");
+												turn--;
+												System.out.println("Try again");
+												System.out.println();
+											}
+											
 									}
-									
 							}
 						turn++;
 						board();
