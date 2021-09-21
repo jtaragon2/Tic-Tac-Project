@@ -3,25 +3,23 @@ import java.util.Scanner;
 
 public class TheGame
 	{
-		public static int row;
-		public static int col;
-		public static int a;
-		public static int move;
-		public static int board[][][];
-		public static int selectedLevel;
-		public static int individualRow;
-		public static String name;
-		public static String nameII;
-		public static boolean win;
-		public static int turn;
+		private static int row;
+		private static int col;
+		
+		private static int board[][][];
+		
+		private static String name;
+		private static String nameII;
+		private static boolean win;
+		private static int turn;
 		private static boolean quiere;
-		public static int layerC;
-		public static int colC;
-		public static int shelfC;
-		public static int victory;
-		public static int nameWins;
-		public static int nameIIWins;
-		public static int wins;
+		private static int layerC;
+		private static int colC;
+		private static int shelfC;
+		private static int victory;
+		private static int nameWins;
+		private static int nameIIWins;
+		private static int wins;
 		private static Scanner getter = new Scanner(System.in);
 		private static Scanner stringGetter = new Scanner(System.in);
 		
