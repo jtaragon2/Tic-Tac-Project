@@ -335,7 +335,7 @@ public class TheGame
 			
 		public static boolean hasWon()
 			{
-				if (board[1][1][1] + board[2][2][2] + board[0][0][0] == 3)
+				if (board[1][1][1] == 1 && board[2][2][2] == 1 && board[0][0][0] == 1)
 					{
 						return true;
 					}
@@ -422,7 +422,9 @@ public class TheGame
 											}
 											
 									}
-							}else {
+							}
+						else
+							{
 								if (turn % 2 == 1)
 									{
 										
