@@ -490,6 +490,7 @@ public class TheGame
 								victory = getter.nextInt();
 								if (victory == 1)
 									{
+										turn =0;
 										win = false;
 										wins++;
 										System.out.println("Who won?");
